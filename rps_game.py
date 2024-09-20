@@ -9,16 +9,20 @@ def rps_game():
     print(f"\nYou chose: {user}")
     print(f"Computer chose: {computer}\n")
     
-    if user == 1 and computer == 3:
-        print("🎉🎉 You won!")
-    elif user == 2 and computer == 1:
-        print("🎉🎉 You won!")
-    elif user == 3 and computer == 2:
-        print("🎉🎉 You won!")
-    elif user == computer:
-        print("🤝 Tie Game!")
-    else:
-        print("😥 You lost .. better luck next time.")
+    def decide_winner(player, opponent):
+        if player == 1 and opponent == 3:
+            return "🎉🎉 You won!"
+        elif player == 2 and opponent == 1:
+            return "🎉🎉 You won!"
+        elif player == 3 and opponent == 2:
+            return "🎉🎉 You won!"
+        elif player == opponent:
+            return "🤝 Tie Game!"
+        else:
+            return "😥 You lost .. better luck next time."
+    
+    result = decide_winner(user, computer)
+    print(result)
     
     print("\nPlay again ?!")
     playagain = input("Y for Yes\nQ to Quit\n").lower().strip()
