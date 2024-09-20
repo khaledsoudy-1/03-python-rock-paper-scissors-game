@@ -31,7 +31,7 @@ def decide_winner(player, opponent):
         return "😥 You lost .. better luck next time."
 
 
-def rps_game():
+def play_rps():
     game_counter = 0
     player_wins = 0
     computer_wins = 0
@@ -81,4 +81,4 @@ def rps_game():
 
 if __name__ == '__main__':
     print("===== Welcome To The RPS Game 🧱📄✂ =====")
-    rps_game()
+    play_rps()
