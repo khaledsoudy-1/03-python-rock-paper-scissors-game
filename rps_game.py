@@ -74,7 +74,6 @@ def rps_game():
         
         if playagain == 'y':
             print("\n===== Welcome Back 😍 =====")
-            return rps_game()
         
         else:
             print("🎉🎉🎉🎉\nThank you for playing !\nBye 👋")
