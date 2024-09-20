@@ -1,5 +1,4 @@
 import random
-import sys
 
 
 def get_user_choice():
@@ -77,7 +76,7 @@ def rps_game():
         
         else:
             print("🎉🎉🎉🎉\nThank you for playing !\nBye 👋")
-            sys.exit()
+            break
 
 
 if __name__ == '__main__':
