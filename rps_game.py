@@ -32,6 +32,10 @@ def decide_winner(player, opponent):
 
 
 def rps_game():
+    game_counter = 0
+    player_wins = 0
+    computer_wins = 0
+    
     user = get_user_choice()                   # Get user's choice
     computer = random.choice([1, 2, 3])        # Randomly choose for the computer
     
@@ -39,8 +43,24 @@ def rps_game():
     print(f"\nYou chose: {user}")
     print(f"Computer chose: {computer}\n")
     
-    # Determine the result of the game and display it
+    # Determine the result of the game
     result = decide_winner(user, computer)
+    
+    # Increment game counter
+    game_counter += 1
+    
+    # Increment player_wins and computer_wins
+    if result.startswith("🎉"):
+        player_wins += 1
+    if result.startswith("😥"):
+        computer_wins += 1
+    
+    # Display counters
+    print(f"Game Count    : {game_counter}")
+    print(f"Player Wins   : {player_wins}")
+    print(f"Computer Wins : {computer_wins}\n")
+    
+    # Display the result of the game
     print(result)
     
     # Ask the user if they want to play again
