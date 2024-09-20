@@ -3,7 +3,18 @@ import sys
 
 
 def rps_game():
-    user = int(input("Please, enter:\n1 for Rock\n2 for Paper\n3 for Scissors\n"))
+    while True:
+        try:
+            user = int(input("Please, enter:\n1 for Rock\n2 for Paper\n3 for Scissors\n"))
+            
+            # Validate user input.
+            if user in [1, 2, 3]:
+                break
+            raise ValueError
+            
+        except ValueError:
+            print("\nInvalid input. You must enter 1, 2, or 3.")
+        
     computer = random.choice([1, 2, 3])
     
     print(f"\nYou chose: {user}")
