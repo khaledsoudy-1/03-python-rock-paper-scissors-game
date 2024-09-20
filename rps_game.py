@@ -36,6 +36,9 @@ def play_rps():
     player_wins = 0
     computer_wins = 0
     
+    # Make a list of choices corresponding to the numbers
+    choices = ["ROCK", "PAPER", "SCISSORS"]
+    
     while True:
         user = get_user_choice()  # Get user's choice
         computer = random.choice([1, 2, 3])  # Randomly choose for the computer
@@ -57,8 +60,8 @@ def play_rps():
         print(f"Computer Wins: {computer_wins}")
         
         # Display the choices
-        print(f"\nYou chose: {user}")
-        print(f"Computer chose: {computer}\n")
+        print(f"\nYou chose: {choices[user-1]}")
+        print(f"Computer chose: {choices[computer-1]}\n")
         
         # Display the result of the game
         print(result)
