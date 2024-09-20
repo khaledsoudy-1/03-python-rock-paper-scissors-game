@@ -1,4 +1,5 @@
 import random
+from enum import Enum
 
 
 def get_user_choice():
@@ -36,8 +37,10 @@ def play_rps():
     player_wins = 0
     computer_wins = 0
     
-    # Make a list of choices corresponding to the numbers
-    choices = ["ROCK", "PAPER", "SCISSORS"]
+    class RPS(Enum):
+        ROCK = 1
+        PAPER = 2
+        SCISSORS = 3
     
     while True:
         user = get_user_choice()  # Get user's choice
@@ -57,11 +60,11 @@ def play_rps():
         # Display game counters
         print(f"\nGame Count: {game_counter}")
         print(f"Player Wins: {player_wins}")
-        print(f"Computer Wins: {computer_wins}")
+        print(f"Computer Wins: {computer_wins}\n")
         
         # Display the choices
-        print(f"\nYou chose: {choices[user-1]}")
-        print(f"Computer chose: {choices[computer-1]}\n")
+        print(f"You chose      : {RPS(user).name}")
+        print(f"Computer chose : {RPS(computer).name}\n")
         
         # Display the result of the game
         print(result)
